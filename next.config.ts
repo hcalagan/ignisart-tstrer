@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
@@ -6,3 +7,9 @@ const nextConfig: NextConfig = {
 };
 
 export default nextConfig;
+module.exports = {
+  webpack: (config: any) => {
+    config.cache = false;
+    return config;
+  },
+};
